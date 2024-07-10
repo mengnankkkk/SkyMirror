@@ -71,7 +71,7 @@ TerminalShell.filters.push(function (terminal, cmd) {
 
 TerminalShell.commands['shutdown'] = TerminalShell.commands['poweroff'] = function(terminal) {
 	if (this.sudo) {
-		terminal.print('由guest@SkyMirror发布的引力波广播');
+		terminal.print('由kunkun@SkyMirror发布的引力波广播');
 		terminal.print();
 		terminal.print('该系统已进入销毁序列');
 		terminal.print('再见！');
