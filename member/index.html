@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>人物介绍</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
   <style>
     :root {
       --background-color: #2c3e50;
@@ -47,9 +48,9 @@
 
     .navbar {
       width: 100%;
-      background-color: var(--border-color);
+      background-color: transparent; /* 修改为透明 */
       padding: 10px 0;
-      text-align: center;
+      text-align:  left;
     }
 
     .navbar a {
@@ -59,6 +60,20 @@
       border-radius: 5px;
       margin: 0 10px;
       transition: background-color 0.3s ease;
+      display: inline-block; /* 添加这行以便设置宽度和高度 */
+      width: 40px; /* 设置宽度 */
+      height: 40px; /* 设置高度 */
+      line-height: 40px; /* 垂直居中 */
+      position: relative; /* 相对定位，以便子元素绝对定位 */
+    }
+
+    .navbar a.home-icon::before {
+      content: '\1F3E0'; /* Unicode 图标 */
+      font-size: 24px; /* 图标大小 */
+      position: absolute; /* 绝对定位，相对于父元素 */
+      top: 50%; /* 上下居中 */
+      left: 50%; /* 左右居中 */
+      transform: translate(-50%, -50%); /* 居中处理 */
     }
 
     .navbar a:hover {
@@ -177,7 +192,7 @@
 
 <body>
   <div class="navbar">
-    <a href="#">回到主页</a>
+    <a href="ip" class="home-icon"></a> <!-- 添加home-icon类 -->
   </div>
   <div class="container">
     <div class="card">

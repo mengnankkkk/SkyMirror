@@ -1,9 +1,11 @@
 <!doctype html>
 <html>
 <head>
+<link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
 <meta charset="utf-8">
 <title>电子相册</title>
 <style type="text/css">
+
     * {
         margin: 0;
         padding: 0;
@@ -19,6 +21,31 @@
         height: 100vh;
         overflow: hidden;
     }
+    .navbar {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: transparent;
+    }
+    .navbar a {
+        display: flex;
+        align-items: center;
+        color: #333;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        border: 1px solid transparent;
+    }
+    .navbar a:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        border: 1px solid #333;
+    }
+    .navbar a img {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+    }
     .box1 {
         width: 80%;
         max-width: 1200px;
@@ -30,6 +57,7 @@
         display: flex;
         flex-direction: column;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        position: relative;
     }
     .bt {
         width: 100%;
@@ -95,6 +123,12 @@
 </head>
 
 <body>
+<div class="navbar">
+    <a href="#">
+        <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Home">
+        回到主页
+    </a>
+</div>
 <div class="box1">
     <div class="bt">电子相册</div>
     <div class="center">
