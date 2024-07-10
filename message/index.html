@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-<link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
+
 <head>
-  <meta charset="UTF-8">
-  <title>评论区</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>粒子效果背景与评论区</title>
+  
+  <link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="css/component.css" />
+
   <style>
     * {
       margin: 0;
@@ -13,12 +21,12 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: url('https://imgbed.mengnankk.asia/202407012000055.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background: rgba(0, 0, 0, 0.5);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden;
     }
 
     .comment-wrap {
@@ -31,6 +39,7 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       text-align: center;
       position: relative;
+      z-index: 10;
     }
 
     .navbar {
@@ -38,6 +47,7 @@
       top: 10px;
       left: 10px;
       background: transparent;
+      z-index: 10;
     }
 
     .navbar a {
@@ -109,7 +119,28 @@
     .comment-section button:hover {
       background-color: #555;
     }
+
+    #large-header {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    #demo-canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
   </style>
+
+  <!--[if IE]>
+  <script src="js/html5.js"></script>
+  <![endif]-->
 </head>
 
 <body>
@@ -119,24 +150,37 @@
       回到主页
     </a>
   </div>
-  <div class="comment-wrap">
-    <h1>念两句诗</h1>
-    <h1>有什么话评论区跟我留言吧</h1>
-    <p id="poem">挑选中...</p>
-    <p id="info"></p>
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    <script>
-      jinrishici.load(function (result) {
-        document.getElementById("poem").innerHTML = result.data.content;
-        document.getElementById("info").innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》';
-      });
-    </script>
-    <div class="comment-section">
-      <h2>评论区</h2>
-      <textarea placeholder="在这里输入你的评论..."></textarea>
-      <button>提交评论</button>
+
+  <div class="container demo-1">
+    <div id="large-header" class="large-header">
+      <canvas id="demo-canvas"></canvas>
+      <div class="content">
+        <div class="comment-wrap">
+          <h1>念两句诗</h1>
+          <h1>有什么话评论区跟我留言吧</h1>
+          <p id="poem">挑选中...</p>
+          <p id="info"></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+          <script>
+            jinrishici.load(function (result) {
+              document.getElementById("poem").innerHTML = result.data.content;
+              document.getElementById("info").innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》';
+            });
+          </script>
+          <div class="comment-section">
+            <h2>评论区</h2>
+            <textarea placeholder="在这里输入你的评论..."></textarea>
+            <button>提交评论</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script src="js/TweenLite.min.js"></script>
+  <script src="js/EasePack.min.js"></script>
+  <script src="js/rAF.js"></script>
+  <script src="js/demo-1.js"></script>
 </body>
 
 </html>

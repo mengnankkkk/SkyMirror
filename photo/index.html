@@ -1,177 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
-<meta charset="utf-8">
-<title>电子相册</title>
-<style type="text/css">
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        background: url('https://imgbed.mengnankk.asia/202407012000055.jpg') no-repeat center center fixed;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
-    }
-    .navbar {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: transparent;
-    }
-    .navbar a {
-        display: flex;
-        align-items: center;
-        color: #333;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-        border: 1px solid transparent;
-    }
-    .navbar a:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        border: 1px solid #333;
-    }
-    .navbar a img {
-        margin-right: 8px;
-        width: 20px;
-        height: 20px;
-    }
-    .box1 {
-        width: 80%;
-        max-width: 1200px;
-        height: 80%;
-        background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        position: relative;
-    }
-    .bt {
-        width: 100%;
-        height: 60px;
-        text-align: center;
-        line-height: 60px;
-        background: #333;
-        color: #fff;
-        font-size: 24px;
-        font-weight: bold;
-        background: linear-gradient(45deg, #333, #555);
-    }
-    .center {
-        display: flex;
-        flex: 1;
-        padding: 20px;
-        gap: 20px;
-    }
-    .pic {
-        flex: 1;
-        display: grid;
-        place-items: center;
-        position: relative;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background: #eaeaea;
-    }
-    .pic img {
-        width: 100%;
-        height: auto;
-        display: none;
-        transition: opacity 0.5s ease, transform 0.3s ease;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .pic img.active {
-        display: block;
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    .dav {
-        width: 120px;
-        height: 100%;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .dav img {
-        width: 100%;
-        height: auto;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .dav img:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-</style>
+<head>
+  <title>照片展示</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/main.css" />
+  <link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/noscript.css" />
+  </noscript>
 </head>
 
-<body>
-<div class="navbar">
-    <a href="#">
-        <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Home">
-        回到主页
-    </a>
-</div>
-<div class="box1">
-    <div class="bt">电子相册</div>
-    <div class="center">
-        <div class="pic" id="mainPic">
-            <img id="pic1" src="images/mn1.jpg" class="active"/>
-            <img id="pic2" src="images/mn2.jpg"/> 
-            <img id="pic3" src="images/mn3.jpg"/> 
-            <img id="pic4" src="images/mn4.jpg"/>
-            <img id="pic5" src="images/mn5.jpg"/>
-            <img id="pic6" src="images/mn6.jpg"/> 
-            <img id="pic7" src="images/mn7.jpg"/> 
-            <img id="pic8" src="images/mn8.jpg"/>
-        </div>
-        <div class="dav">
-            <img src="images/c1.jpg" onclick="showImage('pic1')" />
-            <img src="images/c2.jpg" onclick="showImage('pic2')" />
-            <img src="images/c3.jpg" onclick="showImage('pic3')" />
-            <img src="images/c4.jpg" onclick="showImage('pic4')" />
-            <img src="images/c5.jpg" onclick="showImage('pic5')" />
-            <img src="images/c6.jpg" onclick="showImage('pic6')" />
-            <img src="images/c7.jpg" onclick="showImage('pic7')" />
-            <img src="images/c8.jpg" onclick="showImage('pic8')" />
-        </div>
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="https://github.com/realwds"><strong>Alejandro</strong> </a></h1>
+      <nav>
+        <ul>
+          <li><a href="https://github.com/realwds" class="">返回主页</a></li>
+          <li><a href="#footer" class="icon solid fa-info-circle">关于</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+    <div id="main">
     </div>
-</div>
-
-<script type="text/javascript">
-    function showImage(id) {
-        const images = document.querySelectorAll('.pic img');
-        images.forEach(img => {
-            img.classList.remove('active');
-            img.style.opacity = 0;
-        });
-        const activeImg = document.getElementById(id);
-        activeImg.classList.add('active');
-        setTimeout(() => {
-            activeImg.style.opacity = 1;
-        }, 10);
+    <!-- Footer -->
+    <footer id="footer" class="panel">
+      <div class="inner split">
+        <div>
+          <section>
+            <h2>控制台</h2>
+            <p>Alejandro相册共有<span id="count_CN"></span>张图片哦，人生的每一帧都值得记录。</p>
+          </section>
+          <section>
+            <ul class="icons">
+              <li><a href="https://gitee.com/wrongcode" class="icon brands fa-github" target="_blank"><span
+                    class="label">Gitee</span></a></li>
+              <li><a href="https://github.com/realwds" class="icon brands fa-github" target="_blank"><span
+                    class="label">GitHub</span></a></li>
+            </ul>
+          </section>
+          <p class="copyright"> &copy; 2020 <a href="https://github.com/realwds">YOYLING &middot; Alejandro</a> . </p>
+        </div>
+        <div>
+          <section>
+            <h2>关于Alejandro</h2>
+            <p>不是每个人都能成为摄影师，但好的摄影作品可以出自任何人。<br />我最喜欢摄影中你无法预期的下一刻。</p>
+          </section>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="text/javascript">
+    var datas = `沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif
+沙雕,2018年07月21日拍摄,https://n.sinaimg.cn/tech/transform/427/w178h249/20201120/f0fa-kefmpha9628164.gif`;
+    datas = datas.split("\n");
+    for (var i = 0; i < datas.length; i++) {
+      datas[i] = datas[i].split(",");
     }
-    
-    // Display the first image by default
-    showImage('pic1');
-</script>
 
+    function creatArticle(datas) {
+      var parent = document.getElementById("main");
+      for (var i = 0; i < datas.length; i++) {
+        var article = document.createElement("article");
+        article.className = "thumb";
+        parent.appendChild(article);
+        var a = document.createElement("a");
+        a.className = "image";
+        a.href = datas[i][2];
+        article.appendChild(a);
+        var img = document.createElement("img");
+        img.src = datas[i][2]; // + "?x-oss-process=image/resize,w_640/quality,q_85"
+        a.appendChild(img);
+        var h2 = document.createElement("h2");
+        h2.innerHTML = datas[i][0];
+        article.appendChild(h2);
+        var p = document.createElement("p");
+        p.innerHTML = datas[i][1];
+        article.appendChild(p);
+      }
+    }
+    creatArticle(datas);
+    document.getElementById("count_CN").innerHTML = datas.length;
+  </script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.poptrox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/browser.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/breakpoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/util.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/main.js"></script>
 </body>
+
 </html>
