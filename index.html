@@ -42,10 +42,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 10px 40px 25px 40px; /* 调整顶部的padding */
         }
         #content {
-            height: 500px;
+            height: 630px; /* 调整内容区域的高度 */
             flex-grow: 1;
         }
         #footer {
@@ -67,7 +67,25 @@
             text-decoration: none;
         }
         .logo pre {
-            font-size: 1em;
+            font-size: 1.2em; /* 增加 logo 的字体大小 */
+            margin-bottom: 10px; /* 增加底部的margin */
+        }
+        .picture {
+            width: 120px; /* 调整大小以适应原有logo的大小 */
+            height: 120px;
+            background-image: url('logo.jpg'); /* 确保路径正确 */
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            animation: run 12s linear infinite;
+        }
+        @keyframes run {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
         .logo-icon {
             width: 50px;
@@ -124,13 +142,13 @@
         </ul>
     </nav>
     
-    <a href="http://your-signup-link.com" class="signup-button">Join us</a>
+    <a href="https://github.com/mengnankkkk/SkyMirror/tree/main" class="signup-button">Join us</a>
 </div>
 
 <div class="content">
     <div id="header">
         <div class="logo">
-            <pre style="font:1em 'andale mono', 'lucida console', 'Courier New'"><b>
+            <pre style="font:1.2em 'andale mono', 'lucida console', 'Courier New'"><b>
 <font color="#ffffff">       _____ _          __  __ _                      </font>
 <font color="#dddddd">     / ____| |        |  \/  (_)                     </font>
 <font color="#bbbbbb">   | (___ | | ___   _| \  / |_ _ __ _ __ ___  _ __  </font>
@@ -141,7 +159,7 @@
 <font color="#111111">           |___/                              </font>
             </b></pre>
         </div>
-        <img src="logo.jpg" alt="Logo" class="logo-icon">
+        <div class="picture"></div>
     </div>
 
     <div id="content">
