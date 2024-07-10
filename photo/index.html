@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>电子相册</title>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background: url('https://imgbed.mengnankk.asia/202407012000055.jpg') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .box1 {
+        width: 80%;
+        max-width: 1200px;
+        height: 80%;
+        background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    .bt {
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        background: #333;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        background: linear-gradient(45deg, #333, #555);
+    }
+    .center {
+        display: flex;
+        flex: 1;
+        padding: 20px;
+        gap: 20px;
+    }
+    .pic {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        position: relative;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #eaeaea;
+    }
+    .pic img {
+        width: 100%;
+        height: auto;
+        display: none;
+        transition: opacity 0.5s ease, transform 0.3s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .pic img.active {
+        display: block;
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    .dav {
+        width: 120px;
+        height: 100%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .dav img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dav img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+</style>
+</head>
+
+<body>
+<div class="box1">
+    <div class="bt">电子相册</div>
+    <div class="center">
+        <div class="pic" id="mainPic">
+            <img id="pic1" src="images/mn1.jpg" class="active"/>
+            <img id="pic2" src="images/mn2.jpg"/> 
+            <img id="pic3" src="images/mn3.jpg"/> 
+            <img id="pic4" src="images/mn4.jpg"/>
+            <img id="pic5" src="images/mn5.jpg"/>
+            <img id="pic6" src="images/mn6.jpg"/> 
+            <img id="pic7" src="images/mn7.jpg"/> 
+            <img id="pic8" src="images/mn8.jpg"/>
+        </div>
+        <div class="dav">
+            <img src="images/c1.jpg" onclick="showImage('pic1')" />
+            <img src="images/c2.jpg" onclick="showImage('pic2')" />
+            <img src="images/c3.jpg" onclick="showImage('pic3')" />
+            <img src="images/c4.jpg" onclick="showImage('pic4')" />
+            <img src="images/c5.jpg" onclick="showImage('pic5')" />
+            <img src="images/c6.jpg" onclick="showImage('pic6')" />
+            <img src="images/c7.jpg" onclick="showImage('pic7')" />
+            <img src="images/c8.jpg" onclick="showImage('pic8')" />
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function showImage(id) {
+        const images = document.querySelectorAll('.pic img');
+        images.forEach(img => {
+            img.classList.remove('active');
+            img.style.opacity = 0;
+        });
+        const activeImg = document.getElementById(id);
+        activeImg.classList.add('active');
+        setTimeout(() => {
+            activeImg.style.opacity = 1;
+        }, 10);
+    }
+    
+    // Display the first image by default
+    showImage('pic1');
+</script>
+
+</body>
+</html>
