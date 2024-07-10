@@ -109,7 +109,7 @@ var Terminal = {
 		fg_color:		'#FFF',
 		cursor_blink_time:	700,
 		cursor_style:		'block',
-		prompt:			'guest@SkyMirror:~# ',
+		prompt:			'kunkun@SkyMirror:~# ',
 		spinnerCharacters:	['[   ]','[.  ]','[.. ]','[...]'],
 		spinnerSpeed:		250,
 		typingSpeed:		50
