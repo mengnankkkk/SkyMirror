@@ -42,7 +42,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 40px;
+            padding: 10px 40px 25px 40px; /* 调整顶部的padding */
         }
         #content {
             height: 630px;
@@ -68,10 +68,24 @@
         }
         .logo pre {
             font-size: 1em;
+            margin-bottom: 10px; /* 增加底部的margin */
         }
-        .logo-icon {
-            width: 150px;
-            height: 150px;
+        .picture {
+            width: 120px; /* 调整大小以适应原有logo的大小 */
+            height: 120px;
+            background-image: url('logo.jpg'); /* 确保路径正确 */
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            animation: run 12s linear infinite;
+        }
+        @keyframes run {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
         .signup-button {
             background-color: #003366; /* 深蓝色背景 */
@@ -141,7 +155,7 @@
 <font color="#111111">           |___/                              </font>
             </b></pre>
         </div>
-        <img src="logo.jpg" alt="Logo" class="logo-icon">
+        <div class="picture"></div>
     </div>
 
     <div id="content">
