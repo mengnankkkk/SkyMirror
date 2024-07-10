@@ -1,139 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="utf-8">
+    <title>SkyMirror</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="screen.css" type="text/css">
 
-<meta charset="utf-8">
-<title>SkyMirror</title>
+    <style type="text/css">
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .sidebar {
+            width: 150px;
+            background-color: #111111;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .content {
+            margin-left: 150px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        #content {
+            height: 500px;
+            flex-grow: 1;
+        }
+        #footer {
+            color: #FFF;
+            font-size: x-small;
+            opacity: 0.5;
+            text-align: right;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .logo pre {
+            font-size: 1em;
+        }
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+        }
+        .signup-button {
+            background-color: #003366; /* 深蓝色背景 */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0 0 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
 
-<script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="screen.css" type="text/css">
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        function set_cli_focus() {
+            $('#cli').trigger('focus');
+            setTimeout(set_cli_focus, 500);
+        }
 
-<style type="text/css">
-	body {
-		font-family: 'Courier New', monospace;
-		background-color: #000000;
-		color: #ffffff;
-		margin: 0;
-		display: flex;
-	}
-	.container {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-	}
-	.sidebar {
-		width: 150px;
-		background-color: #111111;
-		padding: 20px;
-		box-sizing: border-box;
-		height: 100vh;
-		position: fixed;
-		overflow-y: auto;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-	.content {
-		margin-left: 150px;
-		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-	}
-	#header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 10px 20px;
-	}
-	#content {
-		height: 500px;
-		flex-grow: 1;
-	}
-	#footer {
-		color: #FFF;
-		font-size: x-small;
-		opacity: 0.5;
-		text-align: right;
-		padding: 10px;
-	}
-	nav ul {
-		list-style-type: none;
-		padding: 0;
-	}
-	nav ul li {
-		margin: 10px 0;
-	}
-	nav ul li a {
-		color: #ffffff;
-		text-decoration: none;
-	}
-	.logo pre {
-		font-size: 1em;
-	}
-	.logo-icon {
-		width: 50px;
-		height: 50px;
-	}
-	.signup-button {
-		background-color: red;
-		color: white;
-		text-align: center;
-		padding: 10px;
-		text-decoration: none;
-		display: inline-block;
-		margin: 20px 0 0 0;
-		border-radius: 5px;
-		font-weight: bold;
-	}
-</style>
+        function runCommand(cmd) {
+            var terminal = $('#cli')[0].contentWindow.Terminal;
+            terminal.clear(terminal);
+            terminal.runCommand(cmd);
+        }
 
-<script type="text/javascript">
-	function set_cli_focus() {
-		$('#cli').trigger('focus');
-		setTimeout(set_cli_focus, 500);
-	}
+        $(document).ready(function(){
+            $(".link").click(function(event){
+                var cmd=$(this).attr('cmd');
+                runCommand(cmd);
+            });
 
-	function runCommand(cmd) {
-		var terminal = $('#cli')[0].contentWindow.Terminal;
-		terminal.clear(terminal);
-		terminal.runCommand(cmd);
-	}
-
-	$(document).ready(function(){
-		$(".link").click(function(event){
-			var cmd=$(this).attr('cmd');
-			runCommand(cmd);
-		});
-
-		set_cli_focus();
-	});
-</script>
+            set_cli_focus();
+        });
+    </script>
 </head>
 <body>
 
 <div class="sidebar">
-	<nav>
-		<ul>
-			<li><a href="#" class="link" cmd="cat photos.txt" style="color: #bbbbbb;"><i class="fas fa-camera"></i> Photos</a></li>
-			<li><a href="#" class="link" cmd="cat messages.txt" style="color: #cccccc;"><i class="fas fa-envelope"></i> Messages</a></li>
-			<li><a href="#" class="link" cmd="cat number.txt" style="color: #dddddd;"><i class="fas fa-phone"></i> Number</a></li>
-			<li><a href="https://github.com/mengnankkkk" class="link" cmd="cat github.txt" style="color: #eeeeee;"><i class="fab fa-github"></i> GitHub</a></li>
-
-			<li><a href="#" class="link" cmd="cat .flag" id="flag">Flag</a></li>
-		</ul>
-	</nav>
-	
-	<a href="http://your-signup-link.com" class="signup-button">联系我们
-		参与报名</a>
+    <nav>
+        <ul>
+            <li><a href="#" class="link" cmd="cat photos.txt" style="color: #bbbbbb;"><i class="fas fa-camera"></i> Photos</a></li>
+            <li><a href="#" class="link" cmd="cat messages.txt" style="color: #cccccc;"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="#" class="link" cmd="cat number.txt" style="color: #dddddd;"><i class="fas fa-phone"></i> member</a></li>
+            <li><a href="https://github.com/mengnankkkk" class="link" cmd="cat github.txt" style="color: #eeeeee;"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="#" class="link" cmd="cat .help" style="color: #ffffff;"><i class="fas fa-question"></i> Help</a></li>
+            <li><a href="#" class="link" cmd="cat .version" style="color: #ffffff;"><i class="fas fa-code"></i> contact</a></li>
+            <li><a href="#" class="link" cmd="cat .flag" id="flag">Flag</a></li>
+        </ul>
+    </nav>
+    
+    <a href="http://your-signup-link.com" class="signup-button">Join us</a>
 </div>
 
 <div class="content">
-	<div id="header">
-		<div class="logo">
-			<pre style="font:1em 'andale mono', 'lucida console', 'Courier New'"><b>
+    <div id="header">
+        <div class="logo">
+            <pre style="font:1em 'andale mono', 'lucida console', 'Courier New'"><b>
 <font color="#ffffff">       _____ _          __  __ _                      </font>
 <font color="#dddddd">     / ____| |        |  \/  (_)                     </font>
 <font color="#bbbbbb">   | (___ | | ___   _| \  / |_ _ __ _ __ ___  _ __  </font>
@@ -142,30 +139,30 @@
 <font color="#555555">|_____/|_|\_\\__, |_|  |_|_|_|  |_|  \___/|_|    </font>
 <font color="#333333">             _/ |                              </font>
 <font color="#111111">           |___/                              </font>
-			</b></pre>
-		</div>
-		<img src="path/to/your/logo.png" alt="Logo" class="logo-icon">
-	</div>
+            </b></pre>
+        </div>
+        <img src="logo.jpg" alt="Logo" class="logo-icon">
+    </div>
 
-	<div id="content">
-		<iframe id="cli" src="cli.html"></iframe>
-	</div>
+    <div id="content">
+        <iframe id="cli" src="cli.html"></iframe>
+    </div>
 
-	<div id="footer" class="footer">
-		Design by Aethoce. Inspired by <a href="http://shellphish.net/">ShellPhish</a>. XKCD CLI by <a href="http://chromakode.com">Chromakode</a>. <a href="http://github.com/chromakode/xkcdfools">Source code</a>.
-	</div>
+    <div id="footer" class="footer">
+        Design by Aethoce. Inspired by <a href="http://shellphish.net/">ShellPhish</a>. XKCD CLI by <a href="http://chromakode.com">Chromakode</a>. <a href="http://github.com/chromakode/xkcdfools">Source code</a>.
+    </div>
 </div>
 
 <script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-45274893-1']);
-	_gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45274893-1']);
+    _gaq.push(['_trackPageview']);
 
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 </script>
 </body>
 </html>
