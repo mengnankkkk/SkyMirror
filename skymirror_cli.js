@@ -165,7 +165,7 @@ Filesystem = {
 		terminal.print($('<h4>').text('战队成绩'));
 		terminal.print();
 		$.each([
-			'我们面向感兴趣的同学建立了QQ群：922387702',
+			'我们面向感兴趣的同学建立了QQ群：945059084',
 			''
 		], function(num, line) {
 			terminal.print(line);
