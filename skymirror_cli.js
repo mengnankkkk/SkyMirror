@@ -71,7 +71,7 @@ TerminalShell.filters.push(function (terminal, cmd) {
 
 TerminalShell.commands['shutdown'] = TerminalShell.commands['poweroff'] = function(terminal) {
 	if (this.sudo) {
-		terminal.print('由kunkun@SkyMirror发布的引力波广播');
+		terminal.print('由user@SkyMirror发布的引力波广播');
 		terminal.print();
 		terminal.print('该系统已进入销毁序列');
 		terminal.print('再见！');
@@ -402,71 +402,6 @@ TerminalShell.commands['locate'] = function(terminal, what) {
 	};
 	if (!oneLiner(terminal, what, keywords)) {
 		terminal.print('找啥？');
-	}
-};
-
-Adventure = {
-	rooms: {
-		0:{description:'你置身于101号房间', exits:{west:1, south:10}},
-		1:{description:'这里摆放了各类工具', exits:{east:0, west:2}},
-		2:{description:'这里是书柜', exits:{east:1, west:3}},
-		3:{description:'谁的烙铁没拔电源', exits:{east:2, west:4}},
-		4:{description:'是中心机房，最好不要靠近这里', exits:{east:3, west:5}},
-		5:{description:'白砂糖和香辛料', exits:{east:4, west:6}},
-		6:{description:'禁止超五类网线入内', exits:{east:5, west:7}},
-		7:{description:'不要拿我的读卡器', exits:{east:6, west:8}},
-		8:{description:'失落的密室', exits:{east:7}},
-		10:{description:'漆黑一片', exits:{north:0, south:11}, enter:function(terminal) {
-				if (!Adventure.status.lamp) {
-					terminal.print('你被困住了');
-					Adventure.status.alive = false;
-					Adventure.goTo(terminal, 666);
-				}
-			}
-		},
-		11:{description:'一张床，或许你可以在此长眠', exits:{north:10}},
-		666:{description:'来自彁撒旦的问候&+屍逃サナイ逃サナイ逃サ#SP彁D#AS趗于铤鞣"鰖籌l}追u鞅}彠輄}逛['}
-	},
-	
-	status: {
-		alive: true,
-		lamp: false
-	},
-	
-	goTo: function(terminal, id) {
-		Adventure.location = Adventure.rooms[id];
-		Adventure.look(terminal);
-		if (Adventure.location.enter) {
-			Adventure.location.enter(terminal);
-		}
-	}
-};
-Adventure.location = Adventure.rooms[0];
-
-TerminalShell.commands['look'] = Adventure.look = function(terminal) {
-	terminal.print(Adventure.location.description);	
-	if (Adventure.location.exits) {
-		terminal.print();
-		
-		var possibleDirections = [];
-		$.each(Adventure.location.exits, function(name, id) {
-			possibleDirections.push(name);
-		});
-		terminal.print('Exits: '+possibleDirections.join(', '));
-	}
-};
-
-TerminalShell.commands['go'] = Adventure.go = function(terminal, direction) {
-	if (Adventure.location.exits && direction in Adventure.location.exits) {
-		Adventure.goTo(terminal, Adventure.location.exits[direction]);
-	} else if (!direction) {
-		terminal.print('去哪？');
-	} else if (direction == 'up') {
-		terminal.print("天花板");
-	} else if (direction == 'down') {
-		terminal.print("地板");
-	} else {
-		terminal.print('You cannot go '+direction+'.');
 	}
 };
 
