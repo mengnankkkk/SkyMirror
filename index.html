@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="screen.css" type="text/css">
-
+    <link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+    <script src="js.js"></script>
     <style type="text/css">
         body {
             font-family: 'Courier New', monospace;
@@ -42,10 +44,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 10px 40px 25px 40px; /* 调整顶部的padding */
         }
         #content {
-            height: 500px;
+            height: 630px;
             flex-grow: 1;
         }
         #footer {
@@ -68,10 +70,28 @@
         }
         .logo pre {
             font-size: 1em;
+            margin-bottom: 10px; /* 增加底部的margin */
         }
-        .logo-icon {
-            width: 50px;
-            height: 50px;
+        .picture {
+            width: 120px; /* 调整大小以适应原有logo的大小 */
+            height: 120px;
+            background-image: url('logo.jpg'); /* 确保路径正确 */
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            animation: run 12s linear infinite;
+             /* 调节百分比 */
+            margin-top: -3%;
+            
+            
+        }
+        @keyframes run {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
         .signup-button {
             background-color: #003366; /* 深蓝色背景 */
@@ -116,21 +136,21 @@
         <ul>
             <li><a href="photo/index.html" class="link" cmd="cat photos.txt" style="color: #bbbbbb;"><i class="fas fa-camera"></i> Photos</a></li>
             <li><a href="message/index.html" class="link" cmd="cat messages.txt" style="color: #cccccc;"><i class="fas fa-envelope"></i> Messages</a></li>
-            <li><a href="member/index.html" class="link" cmd="cat members.txt" style="color: #dddddd;"><i class="fas fa-phone"></i> member</a></li>
-            <li><a href="https://github.com/mengnankkkk" class="link" cmd="cat github.txt" style="color: #eeeeee;"><i class="fab fa-github"></i> GitHub</a></li>
-            <li><a href="#" class="link" cmd="cat .help" style="color: #ffffff;"><i class="fas fa-question"></i> Help</a></li>
-            <li><a href="#" class="link" cmd="cat .version" style="color: #ffffff;"><i class="fas fa-code"></i> contact</a></li>
+            <li><a href="member/index.html" class="link" cmd="cat number.txt" style="color: #dddddd;"><i class="fas fa-phone"></i> member</a></li>
+            <li><a href="https://github.com/mengnankkkk/SkyMirror" class="link" cmd="cat github.txt" style="color: #eeeeee;"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://mengnankk.asia/Message/" class="link" cmd="cat .help" style="color: #ffffff;"><i class="fas fa-question"></i> Help</a></li>
+            <li><a href="contact/index.html" class="link" cmd="cat .version" style="color: #ffffff;"><i class="fas fa-code"></i> contact</a></li>
             <li><a href="#" class="link" cmd="cat .flag" id="flag">Flag</a></li>
         </ul>
     </nav>
     
-    <a href="http://your-signup-link.com" class="signup-button">Join us</a>
+    <a href="./contact/index.html" class="signup-button">Join us</a>
 </div>
 
 <div class="content">
     <div id="header">
         <div class="logo">
-            <pre style="font:1em 'andale mono', 'lucida console', 'Courier New'"><b>
+            <pre style="font:1.2em 'andale mono', 'lucida console', 'Courier New'"><b>
 <font color="#ffffff">       _____ _          __  __ _                      </font>
 <font color="#dddddd">     / ____| |        |  \/  (_)                     </font>
 <font color="#bbbbbb">   | (___ | | ___   _| \  / |_ _ __ _ __ ___  _ __  </font>
@@ -141,17 +161,16 @@
 <font color="#111111">           |___/                              </font>
             </b></pre>
         </div>
-        <img src="logo.jpg" alt="Logo" class="logo-icon">
+        <div class="picture"></div>
     </div>
 
     <div id="content">
         <iframe id="cli" src="cli.html"></iframe>
     </div>
 
-    <div id="footer" class="footer">
-        Design by Aethoce. Inspired by <a href="http://shellphish.net/">ShellPhish</a>. XKCD CLI by <a href="http://chromakode.com">Chromakode</a>. <a href="http://github.com/chromakode/xkcdfools">Source code</a>.
-    </div>
+
 </div>
+
 
 <script type="text/javascript">
     var _gaq = _gaq || [];

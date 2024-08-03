@@ -1,0 +1,19 @@
+body {
+	background: #000;
+}
+svg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+/* 	border: 2px solid red; */
+}
+teeext {
+	font-family: "Noto Serif Tamil", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}

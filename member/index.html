@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>人物介绍</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
   <style>
     :root {
       --background-color: #2c3e50;
@@ -47,9 +48,9 @@
 
     .navbar {
       width: 100%;
-      background-color: var(--border-color);
+      background-color: transparent; /* 修改为透明 */
       padding: 10px 0;
-      text-align: center;
+      text-align:  left;
     }
 
     .navbar a {
@@ -59,6 +60,20 @@
       border-radius: 5px;
       margin: 0 10px;
       transition: background-color 0.3s ease;
+      display: inline-block; /* 添加这行以便设置宽度和高度 */
+      width: 40px; /* 设置宽度 */
+      height: 40px; /* 设置高度 */
+      line-height: 40px; /* 垂直居中 */
+      position: relative; /* 相对定位，以便子元素绝对定位 */
+    }
+
+    .navbar a.home-icon::before {
+      content: '\1F3E0'; /* Unicode 图标 */
+      font-size: 24px; /* 图标大小 */
+      position: absolute; /* 绝对定位，相对于父元素 */
+      top: 50%; /* 上下居中 */
+      left: 50%; /* 左右居中 */
+      transform: translate(-50%, -50%); /* 居中处理 */
     }
 
     .navbar a:hover {
@@ -177,72 +192,209 @@
 
 <body>
   <div class="navbar">
-    <a href="#">回到主页</a>
+    <a href="../index.html" class="home-icon"></a> <!-- 添加home-icon类 -->
   </div>
   <div class="container">
+    
     <div class="card">
       <div class="photo">
-        <img src="https://img2.baidu.com/it/u=1320503866,3680575511&fm=253&fmt=auto&app=138&f=JPEG?w=300&h=442">
+        <img src="./img/xinyuan.jpg" alt="xinyuan">
       </div>
-      <h1>马云 Jack Ma</h1>
-      <h2>阿里巴巴 alibaba.com</h2>
-      <p>马云，男，汉族，中共党员，1964年9月10日生于浙江省杭州市，祖籍浙江省嵊州市谷来镇。</p>
-      <a href="#">了解更多</a>
+      <h1>xinyuan</h1>
+      <h2>https://websec.space</h2>
+      <p></p>
+      <a href="https://websec.space">了解更多</a>
     </div>
+    
     <div class="card">
       <div class="photo">
-        <img src="https://img0.baidu.com/it/u=3180381019,318788837&fm=253&fmt=auto&app=120&f=JPEG?w=747&h=500">
+        <img src="./img/Wanan.jpg" alt="Wanan">
       </div>
-      <h1>马化腾 Pony</h1>
-      <h2>腾讯 tencent.com</h2>
-      <p>马化腾，汉族，1971年10月29日生于广东省东方县八所港，广东省汕头市潮南区人。</p>
-      <a href="#">了解更多</a>
+      <h1>Wanan</h1>
+      <h2>https://www.wanan.red</h2>
+      <p></p>
+      <a href="https://www.wanan.red">了解更多</a>
     </div>
+    
     <div class="card">
       <div class="photo">
-        <img src="https://img2.baidu.com/it/u=2674451603,1425023713&fm=253&fmt=auto&app=138&f=JPEG?w=857&h=500">
+        <img src="./img/css0k.jpg" alt="css0k">
       </div>
-      <h1>刘强东 Richard Liu</h1>
-      <h2>京东 jd.com</h2>
-      <p>刘强东，男，汉族，1973年3月10日生（另一说法：1974年2月14日），江苏宿迁人，祖籍湖南湘潭。</p>
+      <h1>css0k</h1>
+      <h2></h2>
+      <p></p>
       <a href="#">了解更多</a>
     </div>
+    
     <div class="card">
-        <div class="photo">
-          <img src="https://img2.baidu.com/it/u=2674451603,1425023713&fm=253&fmt=auto&app=138&f=JPEG?w=857&h=500">
-        </div>
-        <h1>刘强东 Richard Liu</h1>
-        <h2>京东 jd.com</h2>
-        <p>刘强东，男，汉族，1973年3月10日生（另一说法：1974年2月14日），江苏宿迁人，祖籍湖南湘潭。</p>
-        <a href="#">了解更多</a>
+      <div class="photo">
+        <img src="./img/Charmersix.jpg" alt="Charmerisx">
       </div>
+      <h1>Charmerisx</h1>
+      <h2>charmersix.icu</h2>
+      <p>21级老登</p>
+      <a href="https://charmersix.icu">了解更多</a>
+    </div>
+    
     <div class="card">
-        <div class="photo">
-          <img src="https://img2.baidu.com/it/u=2674451603,1425023713&fm=253&fmt=auto&app=138&f=JPEG?w=857&h=500">
-        </div>
-        <h1>刘强东 Richard Liu</h1>
-        <h2>京东 jd.com</h2>
-        <p>刘强东，男，汉族，1973年3月10日生（另一说法：1974年2月14日），江苏宿迁人，祖籍湖南湘潭。</p>
-        <a href="#">了解更多</a>
+      <div class="photo">
+        <img src="./img/bandit.jpg" alt="bandit">
       </div>
-      <div class="card">
-        <div class="photo">
-          <img src="https://img2.baidu.com/it/u=2674451603,1425023713&fm=253&fmt=auto&app=138&f=JPEG?w=857&h=500">
-        </div>
-        <h1>刘强东 Richard Liu</h1>
-        <h2>京东 jd.com</h2>
-        <p>刘强东，男，汉族，1973年3月10日生（另一说法：1974年2月14日），江苏宿迁人，祖籍湖南湘潭。</p>
-        <a href="#">了解更多</a>
-      </div>
+      <h1>bandit</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
     <div class="card">
-        <div class="photo">
-          <img src="https://img2.baidu.com/it/u=2674451603,1425023713&fm=253&fmt=auto&app=138&f=JPEG?w=857&h=500">
-        </div>
-        <h1>刘强东 Richard Liu</h1>
-        <h2>京东 jd.com</h2>
-        <p>刘强东，男，汉族，1973年3月10日生（另一说法：1974年2月14日），江苏宿迁人，祖籍湖南湘潭。</p>
-        <a href="#">了解更多</a>
-      </div>  <!-- Additional cards go here -->
+      <div class="photo">
+        <img src="./img/Super.jpg" alt="Super">
+      </div>
+      <h1>Super</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Ghbbhc.jpg" alt="Ghbbhc">
+      </div>
+      <h1>Ghbbhc</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Scofield_Lee.jpg" alt="Scofield_Lee">
+      </div>
+      <h1>Scofield_Lee</h1>
+      <h2>https://scofield.top</h2>
+      <p></p>
+      <a href="https://scofield.top">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Anz.jpg" alt="Anz">
+      </div>
+      <h1>Anz</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Kangsir.jpg" alt="Kangsir">
+      </div>
+      <h1>Kangsir</h1>
+      <h2>https://www.yuque.com/kangsir_</h2>
+      <p></p>
+      <a href="https://www.yuque.com/kangsir_">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/eXVtaW5n.jpg" alt="eXVtaW5n">
+      </div>
+      <h1>eXVtaW5n</h1>
+      <h2>nanguawuming.github.io</h2>
+      <p>“你以后想成为什么样的人？”</p>
+      <a href="https://nanguawuming.github.io">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/0day_joker.jpg" alt="0day_joker">
+      </div>
+      <h1>0day_joker</h1>
+      <h2>internetjoker.top</h2>
+      <p>23级睡魔，狂睡不醒</p>
+      <a href="https://internetjoker.top">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Kiss_me.jpg" alt="Kiss_me">
+      </div>
+      <h1>Kiss_me</h1>
+      <h2>sssxc.xyz</h2>
+      <p></p>
+      <a href="https://sssxc.xyz">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/mengnankk.jpg" alt="mengnankk">
+      </div>
+      <h1>mengnankk</h1>
+      <h2>https://mengnankk.asia</h2>
+      <p></p>
+      <a href="https://home.mengnankk.asia">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/ustinian-an.jpg" alt="ustinian-an">
+      </div>
+      <h1>ustinian-an</h1>
+      <h2>https://linlimei.top</h2>
+      <p></p>
+      <a href="https://linlimei.top">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/GaGa.jpg" alt="GaGa">
+      </div>
+      <h1>GaGa</h1>
+      <h2>https://tt-gaga.github.io</h2>
+      <p>老咸鱼</p>
+      <a href="https://tt-gaga.github.io">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/iris.jpg" alt="iris">
+      </div>
+      <h1>iris</h1>
+      <h2>https://iris217.wiki</h2>
+      <p></p>
+      <a href="https://iris217.wiki">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/yucale.jpg" alt="yucale">
+      </div>
+      <h1>yucale</h1>
+      <h2>https://yucale.wiki</h2>
+      <p>嘿嘿嘿嘿嘿嘿</p>
+      <a href="https://yucale.wiki">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/yesits me.jpg" alt="yesits me">
+      </div>
+      <h1>reflectieon</h1>
+      <h2></h2>
+      <p></p>
+      <a href="https://yesits.me">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/daybr3ak.jpg" alt="daybr3ak">
+      </div>
+      <h1>daybr3ak</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>  <!-- Additional cards go here -->
   </div>
 </body>
 

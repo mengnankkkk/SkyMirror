@@ -1,143 +1,167 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="zh">
 <head>
-<meta charset="utf-8">
-<title>电子相册</title>
-<style type="text/css">
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        background: url('https://imgbed.mengnankk.asia/202407012000055.jpg') no-repeat center center fixed;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
-    }
-    .box1 {
-        width: 80%;
-        max-width: 1200px;
-        height: 80%;
-        background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    }
-    .bt {
-        width: 100%;
-        height: 60px;
-        text-align: center;
-        line-height: 60px;
-        background: #333;
-        color: #fff;
-        font-size: 24px;
-        font-weight: bold;
-        background: linear-gradient(45deg, #333, #555);
-    }
-    .center {
-        display: flex;
-        flex: 1;
-        padding: 20px;
-        gap: 20px;
-    }
-    .pic {
-        flex: 1;
-        display: grid;
-        place-items: center;
-        position: relative;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background: #eaeaea;
-    }
-    .pic img {
-        width: 100%;
-        height: auto;
-        display: none;
-        transition: opacity 0.5s ease, transform 0.3s ease;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .pic img.active {
-        display: block;
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    .dav {
-        width: 120px;
-        height: 100%;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .dav img {
-        width: 100%;
-        height: auto;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .dav img:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+    <link rel="stylesheet" href="./text.css">
+    <link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
+    <script src="./test.js"></script>
+    <title>获奖&&日常</title>
 </head>
-
 <body>
-<div class="box1">
-    <div class="bt">电子相册</div>
-    <div class="center">
-        <div class="pic" id="mainPic">
-            <img id="pic1" src="images/mn1.jpg" class="active"/>
-            <img id="pic2" src="images/mn2.jpg"/> 
-            <img id="pic3" src="images/mn3.jpg"/> 
-            <img id="pic4" src="images/mn4.jpg"/>
-            <img id="pic5" src="images/mn5.jpg"/>
-            <img id="pic6" src="images/mn6.jpg"/> 
-            <img id="pic7" src="images/mn7.jpg"/> 
-            <img id="pic8" src="images/mn8.jpg"/>
+    <main>
+        <div id="gallery">
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201714198.jpg" alt="奖项">
+                <figcaption>奖项</figcaption>
+            </figure>
+            <figure>
+                <div>
+                    <div>
+                        <h2>奖项和比赛</h2>
+                        <p>时光!</p>
+                        <p><br><small>☺ : <br><a target="_blank" href="../index.html">Back index</a></small></p>
+                    </div>
+                </div>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201714201.jpg" alt="奖项">
+                <figcaption>奖项</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201714200.jpg" alt="奖项">
+                <figcaption>奖项</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201714199.jpg" alt="奖项">
+                <figcaption>奖项</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201714197.jpg" alt="奖项">
+                <figcaption>奖项</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201714196.jpg" alt="奖项">
+                <figcaption>奖项</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201714195.jpg" alt="云和天空" title="Photo by Diego PH for Unsplash">
+                <figcaption>奖项</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715168.jpg" alt="白云和蓝天" title="Photo by Carlos Kenobi for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715167.jpg" alt="多云的天空" title="Photo by Alex Machado for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715169.jpg" alt="白天的彩虹" title="Photo by Yulia Gadalina for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715170.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715171.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715172.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715173.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715174.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715176.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Jinan</figcaption>
+            </figure>
+            <figure>
+                <img src="./微信图片_20240720155709.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Jinan</figcaption>
+            </figure>
+            <figure>
+                <img src="./微信图片_20240720155927.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Jinan</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715835.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Jinan</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715536.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Wuhan</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715535.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Wuhan</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715670.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Wuhan</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715673.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Beijing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715672.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Beijing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715674.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Beijing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715668.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Tianjin</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407201715669.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Hefei</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407210955746.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Hefei</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407210955503.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Fujian</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407210955748.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Hefei</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407210955504.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
+            <figure>
+                <img src="https://imgbed.mengnankk.asia/202407210955505.jpg" alt="云海" title="Photo by Szabo Viktor for Unsplash">
+                <figcaption>in Nanjing</figcaption>
+            </figure>
         </div>
-        <div class="dav">
-            <img src="images/c1.jpg" onclick="showImage('pic1')" />
-            <img src="images/c2.jpg" onclick="showImage('pic2')" />
-            <img src="images/c3.jpg" onclick="showImage('pic3')" />
-            <img src="images/c4.jpg" onclick="showImage('pic4')" />
-            <img src="images/c5.jpg" onclick="showImage('pic5')" />
-            <img src="images/c6.jpg" onclick="showImage('pic6')" />
-            <img src="images/c7.jpg" onclick="showImage('pic7')" />
-            <img src="images/c8.jpg" onclick="showImage('pic8')" />
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    function showImage(id) {
-        const images = document.querySelectorAll('.pic img');
-        images.forEach(img => {
-            img.classList.remove('active');
-            img.style.opacity = 0;
-        });
-        const activeImg = document.getElementById(id);
-        activeImg.classList.add('active');
-        setTimeout(() => {
-            activeImg.style.opacity = 1;
-        }, 10);
-    }
-    
-    // Display the first image by default
-    showImage('pic1');
-</script>
-
+    </main>
+    <footer id='info'>Codepen by <a target="_blank" href="../index.html">SkyMirror</a></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('#gallery');
+    </script>
 </body>
 </html>
